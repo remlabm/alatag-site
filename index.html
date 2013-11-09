@@ -3,19 +3,19 @@
 	<head>
 		<title>Anthony Latagliata Jr. • www.alatag.com</title>
         <meta name="description" content="Anthony E. Latagliata Jr.,  This website and all images herein ©2009 Anthony E. Latagliata Jr. ">
-<meta name="keywords" content="Anthony E. Latagliata Jr., alatag.com, anthony latagliata, graphic designer in pittsburgh, pittsburgh graphic design, Latagliata design, latagliata, latagliata graphic design, latagliata photography, photography by anthony, photography by latagliata, anthony latagliata, anthony, latagliata, alatag, alatagliata,  ">
+        <meta name="keywords" content="Anthony E. Latagliata Jr., alatag.com, anthony latagliata, graphic designer in pittsburgh, pittsburgh graphic design, Latagliata design, latagliata, latagliata graphic design, latagliata photography, photography by anthony, photography by latagliata, anthony latagliata, anthony, latagliata, alatag, alatagliata,  ">
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,700" rel="stylesheet" />
-		<script src="js/jquery.min.js"></script>
-		<script src="js/config.js"></script>
-		<script src="js/skel.min.js"></script>
-		<noscript>
 			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
-		</noscript>
+			<link rel="stylesheet" href="css/colorbox.css" />
+        <script src="js/jquery.min.js"></script>
+        <script src="js/config.js"></script>
+        <script src="js/skel.min.js"></script>
+        <script src="js/jquery.colorbox-min.js"></script>
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
 		<!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" /><![endif]-->
@@ -30,7 +30,7 @@
 					<li><a href="#portfolio">Portfolio</a></li>
 					<li><a href="#contact">Get in touch</a></li>
 					<li><a href="images/Anthony_Latagliata_Resume.pdf" target="_blank">Resume</a></li>
-</ul>
+                </ul>
 			</nav>
 
 		<!-- Home -->
@@ -105,14 +105,14 @@
 						<div class="row">
 							<div class="4u">
 								<article class="box box-style2">
-									<a href="#" class="image image-full"><img src="images/portfolio01.jpg" alt="" /></a>
+									<a href="images/portfolio01.jpg" class="image image-full"><img src="images/portfolio01.jpg" alt="" /></a>
 			            <h3>Magna feugiat</h3>
 									<p>Ornare nulla proin odio consequat.</p>
 								</article>
 							</div>
 							<div class="4u">
 								<article class="box box-style2">
-									<a href="#" class="image image-full"><img src="images/portfolio02.jpg" alt="" /></a>
+									<a href="images/portfolio02.jpg" class="image image-full"><img src="images/portfolio02.jpg" alt="" /></a>
 			            <h3>Veroeros primis</h3>
 									<p>Ornare nulla proin odio consequat.</p>
 								</article>
@@ -200,9 +200,9 @@
 							<div class="12u"><br><br>
 								<h3>Find me on</h3>
 								<ul class="social">
-	<li class="twitter"><a href="https://twitter.com/rightsidethinkr" class="icon icon-twitter" target="_blank"><span>Twitter</span></a></li>
-	<li class="linkedin"><a href="http://lnkd.in/CHjdEP" class="icon icon-linkedin" target="_blank"><span>LinkedIn</span></a></li>
-	<li class="googleplus"><a href="https://plus.google.com/105209033581659700181/about" class="icon icon-google-plus" target="_blank"><span>Google+</span></a></li>
+                                    <li class="twitter"><a href="https://twitter.com/rightsidethinkr" class="icon icon-twitter" target="_blank"><span>Twitter</span></a></li>
+                                    <li class="linkedin"><a href="http://lnkd.in/CHjdEP" class="icon icon-linkedin" target="_blank"><span>LinkedIn</span></a></li>
+                                    <li class="googleplus"><a href="https://plus.google.com/105209033581659700181/about" class="icon icon-google-plus" target="_blank"><span>Google+</span></a></li>
                                    
 									<!--
 									<li class="rss"><a href="#" class="icon icon-rss"><span>RSS</span></a></li>
@@ -227,6 +227,11 @@
 				</article>
 			</div>
 
+        <script>
+            $(document).ready(function(){
+                $(".image").colorbox({rel:'image'});
+            });
+        </script>
 
 	</body>
 </html>
