@@ -41,4 +41,15 @@ jQuery(function() {
 			}
 		});
 
+    jQuery('a.image-full').click( function(e){
+        e.stopImmediatePropagation();
+        e.preventDefault();
+        var t = jQuery(this).attr('target');
+        jQuery('div.gallery-wrapper a.'+t).colorbox({
+            rel: t,
+            open:true,
+            returnFocus: false
+        });
+    });
+
 });
