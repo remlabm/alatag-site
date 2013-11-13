@@ -61,7 +61,9 @@
 		form textarea
 		{
 		}
-
+	form .button {
+		margin: 0;
+	}
 	section,
 	article
 	{
