@@ -946,7 +946,7 @@
 div.gallery-wrapper {
     position: relative;
 }
-div.gallery {
+div.gallery-wrapper a {
     position: absolute;
     top:-9999px;
     left:-9999px;
