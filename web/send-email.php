@@ -7,9 +7,9 @@ $config = parse_ini_file("../config.ini");
 try{
 
     // Create the Transport
-    $transport = Swift_SmtpTransport::newInstance( $config['smtp']['hostname'], $config['smtp']['port'])
-        ->setUsername( $config['smtp']['user'] )
-        ->setPassword( $config['smtp']['pass'] )
+    $transport = Swift_SmtpTransport::newInstance( $config['smtp.hostname'], $config['smtp.port'], $config['smtp.encrypt'])
+        ->setUsername( $config['smtp.user'] )
+        ->setPassword( $config['smtp.pass'] )
     ;
 
     // Create the Mailer using your created Transport
@@ -18,7 +18,7 @@ try{
     // Create a message
     $message = Swift_Message::newInstance( $_POST['subject'] )
         ->setFrom( array( $_POST['email'] => $_POST['name'] ))
-        ->setTo( $config['email']['sendTo'] )
+        ->setTo( $config['email.sendTo'] )
         ->setBody( $_POST['message'] );
 
     // Send the message
