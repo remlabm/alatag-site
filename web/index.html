@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/colorbox.css"/>
     <script src="js/jquery.min.js"></script>
     <script src="js/config.js"></script>
+    <script src="js/jquery.form.js"></script>
     <script src="js/skel.min.js"></script>
     <script src="js/jquery.colorbox-min.js"></script>
     <!--[if lte IE 9]>
@@ -204,7 +205,7 @@
         <div>
             <div class="row">
                 <div class="12u">
-                    <form method="post" method="post" action="send_form_email.php">
+                    <form id="contact-form" method="post" action="/send-email.php">
                         <div>
                             <div class="row half">
                                 <div class="6u">
@@ -230,6 +231,7 @@
                                     <a href="#" class="button button-alt form-button-reset">Clear Form</a>
                                 </div>
                             </div>
+                            <div id="contact-form-result"></div>
                         </div>
                     </form>
                 </div>
