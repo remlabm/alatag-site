@@ -4,6 +4,11 @@ require_once '../vendor/autoload.php';
 
 $config = parse_ini_file("../config.ini");
 
+if( file_exists( '../config-secure.ini')){
+    $configSecure = parse_ini_file( '../config-secure.ini' );
+    $config = array_merge_recursive( $config, $configSecure );
+}
+
 try{
 
     // Create the Transport
@@ -16,7 +21,7 @@ try{
     $mailer = Swift_Mailer::newInstance($transport);
 
     // Create a message
-    $message = Swift_Message::newInstance( $_POST['subject'] )
+    $message = Swift_Message::newInstance( $config['email.subjectPrepend'] . $_POST['subject'] )
         ->setFrom( array( $_POST['email'] => $_POST['name'] ))
         ->setTo( $config['email.sendTo'] )
         ->setBody( $_POST['message'] );
