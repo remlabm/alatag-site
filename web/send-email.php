@@ -6,7 +6,7 @@ $config = parse_ini_file("../config.ini");
 
 if( file_exists( '../config-secure.ini')){
     $configSecure = parse_ini_file( '../config-secure.ini' );
-    $config = array_merge_recursive( $config, $configSecure );
+    $config = array_merge( $config, $configSecure );
 }
 
 try{
