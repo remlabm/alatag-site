@@ -15,6 +15,7 @@ window._skel_config = {
 
 jQuery(function() {
 
+  $('#year').html( new Date().getFullYear() );
   $('#contact-form').ajaxForm({
     dataType: 'json',
     success: function( res ){
@@ -22,7 +23,7 @@ jQuery(function() {
       if( res.status == 'err'){
         $('#contact-form-result').addClass('error').html('Error while sending: '+ res.message );
       }else{
-        $(this).clearForm();
+        $(this).resetForm();
         $('#contact-form-result').addClass('success').html('Thank you, I will respond shortly!');
       }
     }
