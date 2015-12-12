@@ -13,5 +13,5 @@ alatag:
     - "80"
 #    - "443"
   environment:
-    VIRTUAL_HOST: alatag.com www.alatag.com
+    VIRTUAL_HOST: alatag.com,www.alatag.com,diamondpictures.photography,www.diamondpictures.photography
     VIRTUAL_PORT: 80
