@@ -1,17 +1,31 @@
-nginxproxy:
+nginx-proxy:
+  labels:
+    io.rancher.container.pull_image: always
   image: jwilder/nginx-proxy
-  restart: always
   ports:
-    - "80:80"
+    - 80:80
+    - 443:443
   volumes:
-    - "/var/run/docker.sock:/tmp/docker.sock"
+  - /etc/nginx/vhost.d
+  - /usr/share/nginx/html
+  - /etc/nginx/certs
+  - /var/run/docker.sock:/tmp/docker.sock:ro
+
+nginx-proxy-companion:
+  labels:
+    io.rancher.container.pull_image: always
+    io.rancher.sidekicks: nginx-proxy
+  image: jrcs/letsencrypt-nginx-proxy-companion
+  volumes_from:
+    - nginx-proxy
+  volumes:
+  - /var/run/docker.sock:/var/run/docker.sock
 
 alatag:
   build: .
   restart: always
-  expose:
-    - "80"
-#    - "443"
   environment:
     VIRTUAL_HOST: alatag.com,www.alatag.com,diamondpictures.photography,www.diamondpictures.photography
     VIRTUAL_PORT: 80
+    LETSENCRYPT_HOST: alatag.com,www.alatag.com,diamondpictures.photography,www.diamondpictures.photography
+    LETSENCRYPT_EMAIL: admin@alatag.com
